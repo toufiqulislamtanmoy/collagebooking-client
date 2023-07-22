@@ -1,0 +1,339 @@
+[
+  {
+    
+    "collegeName": "ABC University",
+    "collegeImage": "https://i.ibb.co/PxyYLZX/ruijia-wang-BS9w1-QCk-Jys-unsplash.jpg",
+    "admissionDates": "August 15 - August 30",
+    "events": "Orientation Day, Alumni Meet, Cultural Fest",
+    "researchHistory": "Founded in 1940, Pioneering research in Science",
+    "sports": "Football, Basketball, Volleyball",
+    "admissionProcess": "Online application with entrance exam",
+    "admissionAvailable": true,
+    "rating": 5.0,
+    "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+    "eventsDetails": [
+      {
+        "eventName": "Orientation Day",
+        "date": "August 15"
+      },
+      {
+        "eventName": "Alumni Meet",
+        "date": "August 25"
+      },
+      {
+        "eventName": "Cultural Fest",
+        "date": "August 30"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Quantum Mechanics Study",
+        "author": "John Doe"
+      },
+      {
+        "title": "Climate Change Research",
+        "author": "Jane Smith"
+      }
+    ],
+    "sportsCategories": [
+      "Football",
+      "Basketball",
+      "Volleyball"
+    ]
+  },
+  {
+    
+    "collegeName": "XYZ College",
+    "collegeImage": "https://i.ibb.co/ZdThsB3/michael-marsh-U0d-BV-Qei-Yk-unsplash.jpg",
+    "admissionDates": "July 25 - August 10",
+    "events": "Freshers Party, Tech Fest, Annual Sports Day",
+    "researchHistory": "Leading research in Technology and Engineering",
+    "sports": "Cricket, Badminton, Swimming",
+    "admissionProcess": "Submit application with essay and interview",
+    "admissionAvailable": false,
+    "rating": 4.1,
+    "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+    "eventsDetails": [
+      {
+        "eventName": "Freshers Party",
+        "date": "July 25"
+      },
+      {
+        "eventName": "Tech Fest",
+        "date": "August 5"
+      },
+      {
+        "eventName": "Annual Sports Day",
+        "date": "August 10"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Artificial Intelligence in Robotics",
+        "author": "Michael Johnson"
+      },
+      {
+        "title": "Sustainable Energy Solutions",
+        "author": "Emily Anderson"
+      }
+    ],
+    "sportsCategories": [
+      "Cricket",
+      "Badminton",
+      "Swimming"
+    ]
+  },
+  {
+    
+    "collegeName": "EFG Institute",
+    "collegeImage": "https://i.ibb.co/mFxnn7T/victoria-heath-b7-CRDcwf-NFU-unsplash.jpg",
+    "admissionDates": "September 1 - September 20",
+    "events": "Science Exhibition, Literary Fest, Cultural Night",
+    "researchHistory": "Renowned for Scientific Research",
+    "sports": "Tennis, Table Tennis, Athletics",
+    "admissionProcess": "Entrance test and interview",
+    "admissionAvailable": false,
+    "rating": 4.6,
+    "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+    "eventsDetails": [
+      {
+        "eventName": "Science Exhibition",
+        "date": "September 5"
+      },
+      {
+        "eventName": "Literary Fest",
+        "date": "September 15"
+      },
+      {
+        "eventName": "Cultural Night",
+        "date": "September 20"
+      }
+    ],
+    "researchWorks": [
+      {
+        "title": "Genetic Engineering Advancements",
+        "author": "David Williams"
+      },
+      {
+        "title": "Medical Breakthroughs",
+        "author": "Sarah Lewis"
+      }
+    ],
+    "sportsCategories": [
+      "Tennis",
+      "Table Tennis",
+      "Athletics"
+    ]
+  },
+  {
+      
+      "collegeName": "PQR Institute",
+      "collegeImage": "https://i.ibb.co/BsXSy8w/casey-olsen-Nl-Fy-PKx-XORo-unsplash.jpg",
+      "admissionDates": "October 1 - October 15",
+      "events": "Tech Expo, Literary Week, Annual Sports Meet",
+      "researchHistory": "Innovative research in Computer Science",
+      "sports": "Cricket, Football, Athletics",
+      "admissionProcess": "Online application with written test",
+      "admissionAvailable": true,
+      "rating": 4.9,
+      "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+      "eventsDetails": [
+        {
+          "eventName": "Tech Expo",
+          "date": "October 5"
+        },
+        {
+          "eventName": "Literary Week",
+          "date": "October 10"
+        },
+        {
+          "eventName": "Annual Sports Meet",
+          "date": "October 15"
+        }
+      ],
+      "researchWorks": [
+        {
+          "title": "AI-driven Automation",
+          "author": "James Anderson"
+        },
+        {
+          "title": "Machine Learning Advancements",
+          "author": "Sophia Lee"
+        }
+      ],
+      "sportsCategories": [
+        "Cricket",
+        "Football",
+        "Athletics"
+      ]
+    },
+    {
+      
+      "collegeName": "LMN University",
+      "collegeImage": "https://i.ibb.co/bmHgNKL/erika-fletcher-MZxqc6n9q-Cw-unsplash.jpg",
+      "admissionDates": "December 1 - December 20",
+      "events": "Annual Fest, Science Symposium, Sports Carnival",
+      "researchHistory": "Cutting-edge research in Biotechnology",
+      "sports": "Basketball, Volleyball, Badminton",
+      "admissionProcess": "Merit-based admission with interview",
+      "admissionAvailable": true,
+      "rating": 5.0,
+      "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+      "eventsDetails": [
+        {
+          "eventName": "Annual Fest",
+          "date": "December 5"
+        },
+        {
+          "eventName": "Science Symposium",
+          "date": "December 15"
+        },
+        {
+          "eventName": "Sports Carnival",
+          "date": "December 20"
+        }
+      ],
+      "researchWorks": [
+        {
+          "title": "Genome Sequencing Breakthroughs",
+          "author": "Michael Smith"
+        },
+        {
+          "title": "Biomedical Engineering Innovations",
+          "author": "Emma Roberts"
+        }
+      ],
+      "sportsCategories": [
+        "Basketball",
+        "Volleyball",
+        "Badminton"
+      ]
+    },
+    {
+      
+      "collegeName": "UVW College",
+      "collegeImage": "https://i.ibb.co/mtKWpMS/olu-famule-Dv2-PNb-MWts-E-unsplash.jpg",
+      "admissionDates": "January 5 - January 25",
+      "events": "Art Exhibition, Debate Championship, Sports Fest",
+      "researchHistory": "Prominent research in Social Sciences",
+      "sports": "Table Tennis, Tennis, Swimming",
+      "admissionProcess": "Entrance test with group discussion",
+      "admissionAvailable": true,
+      "rating": 4.7,
+      "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+      "eventsDetails": [
+        {
+          "eventName": "Art Exhibition",
+          "date": "January 10"
+        },
+        {
+          "eventName": "Debate Championship",
+          "date": "January 20"
+        },
+        {
+          "eventName": "Sports Fest",
+          "date": "January 25"
+        }
+      ],
+      "researchWorks": [
+        {
+          "title": "Sociology Studies",
+          "author": "Jennifer Adams"
+        },
+        {
+          "title": "Economics and Development",
+          "author": "Daniel Brown"
+        }
+      ],
+      "sportsCategories": [
+        "Table Tennis",
+        "Tennis",
+        "Swimming"
+      ]
+    },
+    {
+      
+      "collegeName": "RST College",
+      "collegeImage": "https://example.com/rst-college.jpg",
+      "admissionDates": "February 1 - February 28",
+      "events": "Cultural Carnival, Hackathon, Sports Week",
+      "researchHistory": "Leading research in Environmental Studies",
+      "sports": "Athletics, Football, Badminton",
+      "admissionProcess": "Merit-based admission with personal interview",
+      "admissionAvailable": false,
+      "rating": 4.5,
+      "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+      "eventsDetails": [
+        {
+          "eventName": "Cultural Carnival",
+          "date": "February 10"
+        },
+        {
+          "eventName": "Hackathon",
+          "date": "February 20"
+        },
+        {
+          "eventName": "Sports Week",
+          "date": "February 28"
+        }
+      ],
+      "researchWorks": [
+        {
+          "title": "Sustainable Development Initiatives",
+          "author": "Olivia White"
+        },
+        {
+          "title": "Ecology and Conservation Efforts",
+          "author": "Jacob Turner"
+        }
+      ],
+      "sportsCategories": [
+        "Athletics",
+        "Football",
+        "Badminton"
+      ]
+    },
+    {
+      
+      "collegeName": "GHI Institute",
+      "collegeImage": "https://i.ibb.co/tmVj8dh/sangga-rima-roman-selia-bg-Qg-AKag-QB4-unsplash.jpg",
+      "admissionDates": "March 5 - March 25",
+      "events": "Science Expo, Literary Festival, Sports Gala",
+      "researchHistory": "Cutting-edge research in Medicine and Health Sciences",
+      "sports": "Volleyball, Tennis, Swimming",
+      "admissionProcess": "Entrance test and interview",
+      "admissionAvailable": true,
+      "rating": 4.9,
+      "graduationPicture":"https://i.ibb.co/YPJmZqk/istockphoto-482362583-612x612.jpg",
+      "eventsDetails": [
+        {
+          "eventName": "Science Expo",
+          "date": "March 10"
+        },
+        {
+          "eventName": "Literary Festival",
+          "date": "March 20"
+        },
+        {
+          "eventName": "Sports Gala",
+          "date": "March 25"
+        }
+      ],
+      "researchWorks": [
+        {
+          "title": "Medical Breakthroughs in Oncology",
+          "author": "Emily Johnson"
+        },
+        {
+          "title": "Advancements in Medical Imaging",
+          "author": "Ryan Lewis"
+        }
+      ],
+      "sportsCategories": [
+        "Volleyball",
+        "Tennis",
+        "Swimming"
+      ]
+    }
+]
+

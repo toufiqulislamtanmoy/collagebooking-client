@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProviders";
+import { FaSignInAlt } from "react-icons/fa";
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext);
+    // console.log("From navbar auth context",user.photoURL);
     const navList = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/colleges">Colleges</Link></li>
         <li><Link to="/admission">Admission</Link></li>
         <li><Link to="/myCollage">My College</Link></li>
     </>
+    const userphoto = "";
+    const handelLogOut = async () => {
+        logout(); // Wait for the logout operation to complete
+        console.log('Inside Handel Logout');
+    }
     return (
         <div className="navbar bg-base-200">
             <div className="navbar-start">
@@ -32,27 +42,34 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="flex gap-2">
+                <div className="flex gap-5">
                     <div className="form-control">
                         <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
                     </div>
-                    <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" />
-                            </div>
-                        </label>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div>
+                    {user ?
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user?.photoURL ? user.photoURL : userphoto} />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li><button onClick={handelLogOut}><FaSignInAlt />Logout</button></li>
+                            </ul>
+                        </div>
+                        :
+
+                        <div className="flex gap-2 items-center">
+                            <Link to="/login">Login</Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
