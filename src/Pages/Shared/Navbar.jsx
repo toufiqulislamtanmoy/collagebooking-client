@@ -8,7 +8,7 @@ const Navbar = () => {
     // console.log("From navbar auth context",user.photoURL);
     const navList = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/colleges">Colleges</Link></li>
+        <li><Link to="/collages">Colleges</Link></li>
         <li><Link to="/admission">Admission</Link></li>
         <li><Link to="/myCollage">My College</Link></li>
     </>
@@ -30,7 +30,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">
+                <Link to="/" className="hidden lg:block btn btn-ghost normal-case text-xl">
                     <img className="h-[60px] w-[100px]" src={logo} alt="" />
                 </Link>
             </div>
