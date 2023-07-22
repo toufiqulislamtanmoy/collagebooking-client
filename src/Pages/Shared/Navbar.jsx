@@ -1,22 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProviders";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSearch, FaSignInAlt } from "react-icons/fa";
 const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
+    const [searchText, setSearchText] = useState("");
+    const navigate = useNavigate();
     // console.log("From navbar auth context",user.photoURL);
     const navList = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/collages">Colleges</Link></li>
         <li><Link to="/admission">Admission</Link></li>
         <li><Link to="/myCollage">My College</Link></li>
+
     </>
     const userphoto = "";
     const handelLogOut = async () => {
         logout(); // Wait for the logout operation to complete
         console.log('Inside Handel Logout');
     }
+
+    // for searching 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(searchText)
+        // Redirect to the new route with the search input data
+        navigate(`/search/${searchText}`);
+    };
     return (
         <div className="navbar bg-base-200">
             <div className="navbar-start">
@@ -41,10 +52,13 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="lg:w-[50%] w-[100%] justify-end">
                 <div className="flex gap-5">
                     <div className="form-control">
-                        <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+                        <form onSubmit={handleSubmit} className="flex gap-3 items-center">
+                            <input type="text" placeholder="Search" className="input input-bordered w-full" onChange={(e) => setSearchText(e.target.value)}/>
+                            <button ><FaSearch /></button>
+                        </form>
                     </div>
                     {user ?
                         <div className="dropdown dropdown-end">
@@ -55,12 +69,11 @@ const Navbar = () => {
                             </label>
                             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 <li>
-                                    <a className="justify-between">
+                                    <Link to="/profile" className="justify-between">
                                         Profile
                                         <span className="badge">New</span>
-                                    </a>
+                                    </Link>
                                 </li>
-                                <li><a>Settings</a></li>
                                 <li><button onClick={handelLogOut}><FaSignInAlt />Logout</button></li>
                             </ul>
                         </div>

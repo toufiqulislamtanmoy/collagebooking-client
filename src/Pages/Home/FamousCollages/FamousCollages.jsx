@@ -14,9 +14,9 @@ const FamousCollages = () => {
     }, [collages])
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <SectionTitle title="Famous Collages" />
-            <div className="max-w-7xl my-7 mx-5 lg:mx-auto gap-5 grid grid-cols-1 md:grid-cols-3">
+            <div className=" my-7 mx-5 lg:mx-0  gap-5 grid grid-cols-1 md:grid-cols-3">
                 {
                     famousCollages.map(famousCollage =>
 

@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
 const imageHostingToken = import.meta.env.VITE_IMGBB_KEY;
 const Signup = () => {
+    
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile, logout } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Signup = () => {
                         }
                         /********Insert user details in the database********/
 
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://collagebooking-server.vercel.app/users', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

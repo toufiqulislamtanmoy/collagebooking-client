@@ -3,13 +3,13 @@ import loginanimation from "../../../assets/animations/loginanimation.json"
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProviders";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { useContext } from "react";
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { loginUser, googleLogin } = useContext(AuthContext);
+    const { register, watch, handleSubmit, formState: { errors } } = useForm();
+    const { loginUser, googleLogin, forgetPassword } = useContext(AuthContext);
     const location = useLocation();
     console.log(location);
     const destination = location.state?.from?.pathname || "/"
@@ -27,7 +27,7 @@ const Login = () => {
                 email: user.email,
                 profile_pic: user.photoURL,
             }
-            fetch("http://localhost:5000/users", {
+            fetch("https://collagebooking-server.vercel.app/users", {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -93,6 +93,36 @@ const Login = () => {
                 })
             });
     }
+
+
+    const handaleForgetPassword=()=>{
+        const email = watch('email');
+        console.log(email);
+        if (!email) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "Email Not Found",
+            })
+            return;
+        }
+        forgetPassword(email).then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: `Check your email ${email} To reset the password`,
+            })
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${errorMessage} - ${errorCode}`,
+            })
+          });
+
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse shadow-2xl bg-base-100">
@@ -121,14 +151,14 @@ const Login = () => {
                                 <input {...register("password", { required: true })} type="password" placeholder="password" className="input input-bordered" />
                                 {errors.password && <span className="text-red-500">This field is required</span>}
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" onClick={handaleForgetPassword} className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary rounded-xl">Login</button>
                             </div>
                         </form>
-                        <div className="divider">OR</div>
+                    <div className="divider">OR</div>
                         <div>
                             <button onClick={handelGoogleLogin} className="btn w-full my-1 bg-transparent border-2 border-gray-300"><FcGoogle className="text-2xl" /> Google</button>
                             <button className="btn w-full my-1 bg-transparent border-2 border-gray-300"><FaFacebook className="text-xl text-blue-600" /> Facebook</button>

@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProviders";
+import { Link } from "react-router-dom";
 
 const MyCollage = () => {
     const [myAppliedCollage, setMyAppliedCollage] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        fetch(`http://localhost:5000/admitCollage/${user?.email}`).then(res => res.json()).then(data => {
+        fetch(`https://collagebooking-server.vercel.app/admitCollage/${user?.email}`).then(res => res.json()).then(data => {
             console.log(data);
             setMyAppliedCollage(data);
         })
@@ -28,7 +29,7 @@ const MyCollage = () => {
                             <h2><span className="font-bold">Subject:</span> {item?.subject}</h2>
                             <p>Click the button to listen on Spotiwhy app.</p>
                             <div className="card-actions">
-                                <button className="btn bg-transparent border-2 border-gray-300">Give Review</button>
+                                <Link to={`/review/${item.collage._id}`} className="btn bg-transparent border-2 border-gray-300">Give Review</Link>
                             </div>
                         </div>
                     </div>

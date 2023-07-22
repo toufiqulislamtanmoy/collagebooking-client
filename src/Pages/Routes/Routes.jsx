@@ -11,6 +11,10 @@ import AdmissionForm from "../Home/Admission/AdmissionForm";
 import MyCollage from "../MyCollage/MyCollage";
 import CollegeDetails from "../Collages/CollegeDetails";
 import PrivetRoute from "./PrivetRoute";
+import Search from "../Search/Search";
+import AddReview from "../AddReview/AddReview";
+import UserProfile from "../UserProfile/UserProfile";
+import UpdateUserProfile from "../UpdateUserProfile/UpdateUserProfile";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +39,23 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myCollage",
-                element: <MyCollage />,
+                element: <PrivetRoute><MyCollage /></PrivetRoute>,
+            },
+            {
+                path: "/profile",
+                element: <PrivetRoute><UserProfile /></PrivetRoute>,
+            },
+            {
+                path: "/updateProfile",
+                element: <PrivetRoute><UpdateUserProfile /></PrivetRoute>,
+            },
+            {
+                path: "/review/:collegeID",
+                element: <PrivetRoute><AddReview/></PrivetRoute>,
+            },
+            {
+                path: "/search/:searchText",
+                element: <Search />,
             },
             {
                 path: "/collegeDetails/:id",

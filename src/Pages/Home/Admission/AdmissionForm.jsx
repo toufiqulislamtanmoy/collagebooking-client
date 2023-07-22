@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Lottie from "lottie-react";
-import loginanimation from "../../../assets/animations/loginanimation.json"
+import admissionFrom from "../../../assets/animations/admissionFrom.json"
 import { useNavigate, useParams } from "react-router-dom";
 import useSingleCollage from "../../Hooks/useSingleCollage";
 import Swal from "sweetalert2";
@@ -32,7 +32,7 @@ const AdmissionForm = () => {
                     candidate_image: imgurl 
                   };
                   console.log(admissionData)
-                 fetch('http://localhost:5000/admitCollage',{
+                 fetch('https://collagebooking-server.vercel.app/admitCollage',{
                     method:"POST",
                     headers:{
                         'content-type': 'application/json'
@@ -56,7 +56,7 @@ const AdmissionForm = () => {
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse shadow-2xl bg-base-100">
                 <div className="text-center lg:text-left">
-                    <Lottie animationData={loginanimation} loop={true} />
+                    <Lottie animationData={admissionFrom} loop={true} />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-md">
                     <div className="card-body">
