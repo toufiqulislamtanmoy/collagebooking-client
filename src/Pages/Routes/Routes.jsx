@@ -15,15 +15,22 @@ import Search from "../Search/Search";
 import AddReview from "../AddReview/AddReview";
 import UserProfile from "../UserProfile/UserProfile";
 import UpdateUserProfile from "../UpdateUserProfile/UpdateUserProfile";
+import NotFound from "../NotFound/NotFound";
+import ResearchNotFound from "../ResearchNotFound/ResearchNotFound";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
+        errorElement:<NotFound/>,
         children: [
             {
                 path: "/",
                 element: <Home />,
+            },
+            {
+                path: "/researchNotFound",
+                element: <ResearchNotFound />,
             },
             {
                 path: "/collages",
