@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/AuthProviders";
 import Lottie from "lottie-react";
-import loginanimation from "../../assets/animations/loginanimation.json"
+import updateProfile from "../../assets/animations/update_profile.json"
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
@@ -55,7 +55,7 @@ const UpdateUserProfile = () => {
             <div className="hero-content flex-col lg:flex-row-reverse shadow-2xl bg-base-100">
                 <div className="text-center lg:text-left">
 
-                    <Lottie animationData={loginanimation} loop={true} />
+                    <Lottie animationData={updateProfile} loop={true} />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-md">
                     <div className="card-body">

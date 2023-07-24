@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import loginanimation from "../../../assets/animations/loginanimation.json"
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
+import {FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProviders";
 import { useForm } from "react-hook-form";
@@ -9,13 +9,59 @@ import Swal from "sweetalert2";
 import { useContext } from "react";
 const Login = () => {
     const { register, watch, handleSubmit, formState: { errors } } = useForm();
-    const { loginUser, googleLogin, forgetPassword } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin, forgetPassword } = useContext(AuthContext);
     const location = useLocation();
     console.log(location);
     const destination = location.state?.from?.pathname || "/"
     const navigate = useNavigate();
 
     // Social Login
+    // handel facebookLogin
+    const handelGiyhubLogin = () => {
+        githubLogin().then((loggedInUser) => {
+            // Signed in 
+            const user = loggedInUser.user;
+            console.log(user);
+
+            const saveUser = {
+                name: user.displayName,
+                email: user.email,
+                profile_pic: user.photoURL,
+            }
+            fetch("https://collagebooking-server.vercel.app/users", {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(saveUser)
+            }).then(res => res.json()).then(data => {
+                console.log(data);
+                if (data.insertedId || data.message) {
+                    navigate(destination, { replace: true })
+                    console.log(destination);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Login successfully',
+                        showConfirmButton: true,
+
+                    })
+
+                }
+            })
+            // ...
+        })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("Error Message: ", errorMessage, "Error Code: ", errorCode);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong! from direct catch',
+                })
+            });
+    }
+    // handel google login
     const handelGoogleLogin = () => {
         googleLogin().then((loggedInUser) => {
             // Signed in 
@@ -161,7 +207,7 @@ const Login = () => {
                     <div className="divider">OR</div>
                         <div>
                             <button onClick={handelGoogleLogin} className="btn w-full my-1 bg-transparent border-2 border-gray-300"><FcGoogle className="text-2xl" /> Google</button>
-                            <button className="btn w-full my-1 bg-transparent border-2 border-gray-300"><FaFacebook className="text-xl text-blue-600" /> Facebook</button>
+                            <button onClick={handelGiyhubLogin} className="btn w-full my-1 bg-transparent border-2 border-gray-300"><FaGithub className="text-xl text-blue-600" /> Github</button>
                         </div>
                     </div>
                 </div>
