@@ -1,5 +1,4 @@
-# Campus Hub ("./src/assets/logo.png")
-
+![Campus Hub](./src/assets/logo.png)
 
 ## Live Site
 
